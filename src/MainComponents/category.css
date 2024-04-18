@@ -1,0 +1,8 @@
+.scale-product-smooth{
+   transition-duration: 2s;
+   transition-property: ease-in-out;
+   transition-delay: 1s;
+   transition-timing-function: ease-in-out; 
+   background-color: aqua;
+ }
+ 

@@ -1,12 +1,13 @@
 
 import { Routes, Route } from "react-router-dom"
-
 import { signInWithPopup, GoogleAuthProvider, getAuth } from 'firebase/auth';
 import { app } from './MainComponents/firebaseAuth'; 
 import { useState } from "react"
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 import { toast } from 'react-toastify';
+import NavBar from "./MainComponents/NavBar";
+import HomePage from "./MainComponents/HomePage";
 
 function App() {
 
@@ -14,7 +15,6 @@ function App() {
     userName: '',
     emailId: '',
   })
-
   // email login
   const handleGoogleSignIn = async () => {
     try {
@@ -37,9 +37,8 @@ function App() {
   // console.log(emailData);
   return (
     <div className=" overflow-x-hidden ">
-      <p>
-        hlow there
-      </p>
+      <NavBar/>
+      <HomePage/>
       <Routes>
         <Route></Route>       
       </Routes>
