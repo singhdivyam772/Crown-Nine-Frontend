@@ -11,7 +11,7 @@ const CategoryProduct = () => {
          <p className='text-xl pb-6 pt-2'>
             Our products are designed for everyone, environmentally friendly.
          </p>
-         <section className='flex md:flex-row flex-col justify-center items-center gap-5 py-5 flex-wrap'>
+         <section className='flex md:flex-row flex-col justify-center items-center gap-12 py-5 flex-wrap'>
             
             {/* Necklace */}
             <div className='flex flex-col justify-around items-center z-50 w-[19rem] h-[20rem] cursor-pointer shadow-md rounded-sm bg-pink-100/40 overflow-hidden'>

@@ -8,6 +8,7 @@ const googleProvider = new GoogleAuthProvider();
 import { toast } from 'react-toastify';
 import NavBar from "./MainComponents/NavBar";
 import HomePage from "./MainComponents/HomePage";
+import ProductDetails from "./Pages/ProductDetails";
 
 function App() {
 
@@ -38,9 +39,9 @@ function App() {
   return (
     <div className=" overflow-x-hidden ">
       <NavBar/>
-      <HomePage/>
       <Routes>
-        <Route></Route>       
+        <Route path='/' element={<HomePage/>}/>       
+        <Route path='/productdetails' element={<ProductDetails/>}/> 
       </Routes>
      
     </div>
