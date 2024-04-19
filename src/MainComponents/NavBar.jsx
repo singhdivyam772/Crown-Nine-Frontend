@@ -10,7 +10,7 @@ const NavBar = () => {
       
       {/* logo */}
       <section>
-      <Link to='/productdetails'>       
+        <Link to='/'>       
          <img 
          src="https://res.cloudinary.com/drj0uehgx/image/upload/v1713174881/crown-nine-logo/crown-nine-logo_opuweb.jpg"
          alt="" 
