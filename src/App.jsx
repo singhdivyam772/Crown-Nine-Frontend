@@ -9,6 +9,7 @@ import { toast } from 'react-toastify';
 import NavBar from "./MainComponents/NavBar";
 import HomePage from "./MainComponents/HomePage";
 import ProductDetails from "./Pages/ProductDetails";
+import Cart from "./Pages/Cart";
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage/>}/>       
         <Route path='/productdetails' element={<ProductDetails/>}/> 
+        <Route path='/cart' element={<Cart/>}/> 
       </Routes>
      
     </div>

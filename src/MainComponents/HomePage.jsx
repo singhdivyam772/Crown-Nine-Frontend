@@ -2,6 +2,9 @@ import React from 'react'
 import HomeVideo from './HomeVideo'
 import CategoryProduct from './CategoryProduct'
 import ProductNewArrival from './ProductNewArrival'
+import FeedBack from './FeedBack'
+
+
 
 const HomePage = () => {
   return (
@@ -9,6 +12,7 @@ const HomePage = () => {
       <HomeVideo/>
       <CategoryProduct/>
       <ProductNewArrival/>
+      <FeedBack/>
     </div>
   )
 }

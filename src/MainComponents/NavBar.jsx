@@ -6,16 +6,16 @@ import {Link} from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div className=" w-screen h-[5rem]  shadow-xl flex px-10 justify-between items-center ">
+    <div className=" w-screen h-[5rem]  shadow-md bg-pink-100 flex px-10 justify-between items-center ">
       
       {/* logo */}
       <section>
         <Link to='/'>       
-         <img 
-         src="https://res.cloudinary.com/drj0uehgx/image/upload/v1713174881/crown-nine-logo/crown-nine-logo_opuweb.jpg"
-         alt="" 
-         className=' w-[4rem] h-[4rem]'
-         />
+          <img 
+          src="https://res.cloudinary.com/drj0uehgx/image/upload/v1713174881/crown-nine-logo/crown-nine-logo_opuweb.jpg"
+          alt="" 
+          className=' w-[4rem] h-[4rem] rounded-full object-contain'
+          />
         </Link>
       </section>
 
@@ -31,8 +31,10 @@ const NavBar = () => {
       <section className=' flex justify-center items-center gap-5 text-2xl font-bold'>
          <IoSearchOutline className=' cursor-pointer' />
          <IoPersonOutline className=' cursor-pointer' />
-         <IoIosHeartEmpty className=' cursor-pointer' />
-         <AiOutlineShoppingCart className=' cursor-pointer'/ >
+         {/* <IoIosHeartEmpty className=' cursor-pointer' /> */}
+         <Link to='/cart'>
+          <AiOutlineShoppingCart className=' cursor-pointer'/ >
+         </Link>
       </section>
     </div>
   )

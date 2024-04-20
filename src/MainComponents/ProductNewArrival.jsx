@@ -28,6 +28,98 @@ const ProductNewArrival = () => {
                </p>
             </div>
          </Link>
+
+         <Link to='/productdetails'>
+            <div className='flex flex-col justify-start items-center hover:scale-[1.1] transition-all w-[18rem] min-h-[20rem] cursor-pointer rounded-b-xl shadow-md bg-pink-100/40 overflow-hidden'>
+               <img
+                  src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
+                  alt=""
+                  srcSet=""
+                  className='w-full h-full object-cover'
+               />
+               {/* title */}
+               <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
+                  Korean Delicate Pearl Zircon Ring
+               </p>
+
+               {/* price */}
+               <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
+                  Regular priceRs. 1,299.00
+               </p>
+            </div>
+         </Link> <Link to='/productdetails'>
+            <div className='flex flex-col justify-start items-center hover:scale-[1.1] transition-all w-[18rem] min-h-[20rem] cursor-pointer rounded-b-xl shadow-md bg-pink-100/40 overflow-hidden'>
+               <img
+                  src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
+                  alt=""
+                  srcSet=""
+                  className='w-full h-full object-cover'
+               />
+               {/* title */}
+               <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
+                  Korean Delicate Pearl Zircon Ring
+               </p>
+
+               {/* price */}
+               <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
+                  Regular priceRs. 1,299.00
+               </p>
+            </div>
+         </Link> <Link to='/productdetails'>
+            <div className='flex flex-col justify-start items-center hover:scale-[1.1] transition-all w-[18rem] min-h-[20rem] cursor-pointer rounded-b-xl shadow-md bg-pink-100/40 overflow-hidden'>
+               <img
+                  src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
+                  alt=""
+                  srcSet=""
+                  className='w-full h-full object-cover'
+               />
+               {/* title */}
+               <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
+                  Korean Delicate Pearl Zircon Ring
+               </p>
+
+               {/* price */}
+               <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
+                  Regular priceRs. 1,299.00
+               </p>
+            </div>
+         </Link> <Link to='/productdetails'>
+            <div className='flex flex-col justify-start items-center hover:scale-[1.1] transition-all w-[18rem] min-h-[20rem] cursor-pointer rounded-b-xl shadow-md bg-pink-100/40 overflow-hidden'>
+               <img
+                  src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
+                  alt=""
+                  srcSet=""
+                  className='w-full h-full object-cover'
+               />
+               {/* title */}
+               <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
+                  Korean Delicate Pearl Zircon Ring
+               </p>
+
+               {/* price */}
+               <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
+                  Regular priceRs. 1,299.00
+               </p>
+            </div>
+         </Link> <Link to='/productdetails'>
+            <div className='flex flex-col justify-start items-center hover:scale-[1.1] transition-all w-[18rem] min-h-[20rem] cursor-pointer rounded-b-xl shadow-md bg-pink-100/40 overflow-hidden'>
+               <img
+                  src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
+                  alt=""
+                  srcSet=""
+                  className='w-full h-full object-cover'
+               />
+               {/* title */}
+               <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
+                  Korean Delicate Pearl Zircon Ring
+               </p>
+
+               {/* price */}
+               <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
+                  Regular priceRs. 1,299.00
+               </p>
+            </div>
+         </Link>
       </section>
     </div>
   )
