@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom"
 import { signInWithPopup, GoogleAuthProvider, getAuth } from 'firebase/auth';
 import { app } from './MainComponents/firebaseAuth'; 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 import { toast } from 'react-toastify';
@@ -10,8 +10,28 @@ import NavBar from "./MainComponents/NavBar";
 import HomePage from "./MainComponents/HomePage";
 import ProductDetails from "./Pages/ProductDetails";
 import Cart from "./Pages/Cart";
+import AddProduct from "./Pages/AddProduct";
+import axios from "axios";
+
 
 function App() {
+
+// product data
+const [allProduct, setAllProduct] = useState();
+const [isLoading, setISLoading] = useState(false);
+useEffect(()=>{
+  setISLoading(true);
+  axios.get('http://localhost:3001/getProductData')
+  .then((result)=>{
+    setAllProduct(result.data)
+
+  })
+  .catch((error) =>{
+    console.log(error)
+  });
+  setISLoading(false)
+}, []);
+console.log(allProduct)
 
   const [emailData, setEmailData] = useState({
     userName: '',
@@ -41,9 +61,10 @@ function App() {
     <div className=" overflow-x-hidden ">
       <NavBar/>
       <Routes>
-        <Route path='/' element={<HomePage/>}/>       
-        <Route path='/productdetails' element={<ProductDetails/>}/> 
+        <Route path='/' element={<HomePage allProduct={allProduct} isLoading={isLoading} />}/>       
+        <Route path='/productdetails' element={<ProductDetails allProduct={allProduct}/>}/> 
         <Route path='/cart' element={<Cart/>}/> 
+        <Route path='/addProduct' element={<AddProduct/>}/> 
       </Routes>
      
     </div>

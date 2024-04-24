@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Carousel,
   CarouselContent,
@@ -67,7 +67,11 @@ const imageData = [
 
 ]
 
-const ProductDetails = () => {
+const ProductDetails = (allProduct) => {
+
+  useEffect(()=>{
+    console.log(allProduct);
+  },[])
   return (
     <div className='w-screen min-h-screen flex flex-col px-10'>
 

@@ -30,10 +30,12 @@ const NavBar = () => {
       {/*  admin cart wishlist icon right */}
       <section className=' flex justify-center items-center gap-5 text-2xl font-bold'>
          <IoSearchOutline className=' cursor-pointer' />
-         <IoPersonOutline className=' cursor-pointer' />
+         <Link to='/addProduct'>
+          <IoPersonOutline className=' cursor-pointer' />
+         </Link>
          {/* <IoIosHeartEmpty className=' cursor-pointer' /> */}
          <Link to='/cart'>
-          <AiOutlineShoppingCart className=' cursor-pointer'/ >
+          <AiOutlineShoppingCart / >
          </Link>
       </section>
     </div>

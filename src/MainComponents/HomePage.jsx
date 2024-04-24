@@ -6,12 +6,15 @@ import FeedBack from './FeedBack'
 
 
 
-const HomePage = () => {
+const HomePage = (props) => {
+  const allProduct = props.allProduct;
+  const isLoading = props.isLoading;
+  // console.log(allProduct);
   return (
     <div>
       <HomeVideo/>
       <CategoryProduct/>
-      <ProductNewArrival/>
+      <ProductNewArrival allProduct={allProduct} isLoading={isLoading}/>
       <FeedBack/>
     </div>
   )
