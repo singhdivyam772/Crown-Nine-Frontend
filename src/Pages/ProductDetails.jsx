@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Carousel,
   CarouselContent,
@@ -42,7 +42,7 @@ import { RiFacebookLine } from "react-icons/ri";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiMinusSm } from "react-icons/hi";
 import { BsPlus } from "react-icons/bs";
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const imageData = [
   {
@@ -69,9 +69,13 @@ const imageData = [
 
 const ProductDetails = (allProduct) => {
 
+  const location = useLocation();
+  const productDetails = location.state.products;
+
   useEffect(()=>{
-    console.log(allProduct);
-  },[])
+    if(allProduct)
+    console.log(productDetails)
+  },[allProduct])
   return (
     <div className='w-screen min-h-screen flex flex-col px-10'>
 
