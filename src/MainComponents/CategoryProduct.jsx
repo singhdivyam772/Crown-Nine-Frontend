@@ -9,7 +9,7 @@ const CategoryProduct = () => {
             Everything for You
          </h1>
 
-         <p className='text-xl pb-6 pt-2'>
+         <p className='text-xl md:pb-6 pb-5 pt-2 md:px-0 px-6'>
             Our products are designed for everyone, environmentally friendly.
          </p>
          <section className='flex md:flex-row flex-col justify-center items-center gap-12 py-5 flex-wrap'>

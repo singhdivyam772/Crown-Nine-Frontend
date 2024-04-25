@@ -87,7 +87,7 @@ const FeedBack = () => {
    return (
       <div>
          {/* feedback */}
-         <Carousel className=" relative w-full lg:h-[18rem] h-[28rem] mb-10"
+         <Carousel className=" relative w-full lg:h-[18rem] h-[22rem] md:mb-10 "
             plugins={[plugin.current]}
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}

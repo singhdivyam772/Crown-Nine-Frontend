@@ -44,40 +44,69 @@ import { HiMinusSm } from "react-icons/hi";
 import { BsPlus } from "react-icons/bs";
 import { Link, useLocation } from 'react-router-dom'
 
-const imageData = [
-  {
-    id: 1,
-    url: 'https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg'
-  },
-  {
-    id: 2,
-    url: 'https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510635/Crown-Nine/DSC_3363_stvz17.jpg'
-  },
-  {
-    id: 3,
-    url: 'https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713522459/Crown-Nine/DSC_3436_wgzthb.jpg'
-  },
-  {
-    id: 4,
-    url: 'https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713522505/Crown-Nine/DSC_3466_gf6sf3.jpg'
-  }, {
-    id: 5,
-    url: 'https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713522519/Crown-Nine/DSC_3468_whdnwj.jpg'
-  },
 
-]
 
-const ProductDetails = (allProduct) => {
+const ProductDetails = () => {
 
   const location = useLocation();
   const productDetails = location.state.products;
+  console.log(productDetails);
+  const productTitle = productDetails.productTitle;
+  const productSubtitle = productDetails.productSubtitle;
+  const goldimage1 = productDetails.goldimage1;
+  const goldimage2 = productDetails.goldimage2;
+  const silverimage1 = productDetails.silverimage1;
+  const silverimage2 = productDetails.silverimage2;
+  const mainimage1 = productDetails.mainimage1;
+  const roseimage2 = productDetails.roseimage2;
+  const roseimage1 = productDetails.roseimage1;
+  const mrp = productDetails.mrp;
+  const price = productDetails.price;
+  const itemWeight = productDetails.itemWeight;
+  const shape = productDetails.shape;
+  const specification = productDetails.specification;
+  const gemType = productDetails.gemType;
+  const quality = productDetails.quality;
+  const size1 = productDetails.size1;
+  const size2 = productDetails.size2;
+  const size3 = productDetails.size3;
+  const color1 = productDetails.color1;
+  const color2 = productDetails.color2;
+  const color3 = productDetails.color3;
 
-  useEffect(()=>{
-    if(allProduct)
-    console.log(productDetails)
-  },[allProduct])
+  const imageData = [
+    {
+      id: 1,
+      url: mainimage1
+    },
+    {
+      id: 2,
+      url: goldimage1
+    },
+    {
+      id: 3,
+      url: silverimage1
+    },
+    {
+      id: 4,
+      url: silverimage2
+    },
+    {
+      id: 5,
+      url: roseimage1
+    },
+    {
+      id: 6,
+      url: roseimage2
+    },
+  ]
+
+  useEffect(() => {
+    if (productDetails)
+      console.log(productDetails)
+  }, [productDetails])
   return (
-    <div className='w-screen min-h-screen flex flex-col px-10'>
+    <div className='w-screen min-h-screen flex flex-col md:px-10 px-5'>
 
       {/* breadcrumbs */}
       <Breadcrumb className=' my-5'>
@@ -89,27 +118,21 @@ const ProductDetails = (allProduct) => {
             /
           </BreadcrumbSeparator>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/components">Components</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator>
-            /
-          </BreadcrumbSeparator>
-          <BreadcrumbItem>
-            <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+            <BreadcrumbLink href="/components">ProductDetails</BreadcrumbLink>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
 
       <section className='flex lg:flex-row flex-col w-full '>
         {/* image left side */}
-        <section className=' flex lg:w-[40vw] lg:h-full h-[34rem] '>
+        <section className=' flex lg:w-[40vw] lg:h-full h-[30rem] '>
           <Carousel className=" relative w-full lg:h-[34rem] h-[28rem] ">
             <CarouselContent>
               {imageData.map((image, index) => (
                 <CarouselItem
                   className=""
                   key={index}>
-                  <div className="flex lg:h-[34rem] h-[28rem] items-center justify-center bg-slate-700 ">
+                  <div className="flex lg:h-[34rem] h-[28rem] items-center justify-center ">
                     <img src={image?.url}
                       className=' w-full h-full object-cover'
                     />
@@ -117,33 +140,66 @@ const ProductDetails = (allProduct) => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className='left-[3.3rem] top-[16.5rem] w-[4rem] h-[4rem]' />
-            <CarouselNext className='right-[3.3rem] top-[16.5rem]  w-[4rem] h-[4rem]' />
+            <CarouselPrevious  className='left-[3.3rem] top-[16.5rem] w-[4rem] h-[4rem]' />
+            <CarouselNext
+              disabled={(goldimage1 && goldimage2 && silverimage1 && silverimage2 && roseimage2 && roseimage1) ? false : true}
+               className='right-[3.3rem] top-[16.5rem]  w-[4rem] h-[4rem]' />
           </Carousel>
         </section>
 
         {/* description and other things right */}
-        <section className='flex flex-col items-start lg:w-[40vw] h-full lg:px-10 '>
+        <section className='flex flex-col items-start lg:w-[45vw] h-full lg:px-10 '>
 
           {/* title */}
-          <h1 className=' md:text-4xl text-3xl md:leading-10  w-full'>
-            Double Skinny Strand
+          <h1 className=' md:text-4xl text-3xl md:leading-10 uppercase  w-full'>
+            {productTitle} {quality}
           </h1>
 
           {/* subtitle */}
-          <p className=' md:text-md text-sm  leading-10 w-full'>
-            Waterproof | Tarnish Free |Hypoallergenic | 18K Gold Plated
+          <p className=' md:text-md text-sm  md:leading-10 md:py-0 py-4 w-full'>
+            Waterproof | Anti Tarnish stainless steel |Sweat Proof | Skin Friendly and Anti - Allergic
           </p>
 
           {/* price */}
-          <p className=' md:text-3xl text-xl py-1 leading-10 w-full '>
-            Rs. 1,299.00
+          <p className=' md:text-3xl text-xl py-1 leading-10 w-full flex gap-4 items-center '>
+            Rs. {price} <strike className=' text-[1.1rem]'> Includes All Taxes {mrp} </strike>
           </p>
 
           {/* product color */}
-          <p className=' text-lg py-1 leading-10 w-full'>
-            Color: 18KT Gold Plated
-          </p>
+          {color1 && color2 && color3 &&
+            <div className=' w-full flex justify-start items-center md:my-0 my-3 pr-2 gap-2'>
+              <p className=' text-lg py-1 leading-10'>
+                Color:
+              </p>
+              <p className=' px-4 py-1 rounded-md bg-slate-100 uppercase font-semibold '>
+                {color1}
+              </p>
+              <p  className=' px-4 py-1 rounded-md bg-slate-100 uppercase font-semibold '>
+                {color2}
+              </p>
+              <p  className=' px-4 py-1 rounded-md  bg-slate-100 uppercase font-semibold '>
+                {color3}
+              </p>
+            </div>
+          }
+
+          {/* product size */}
+          {size1 && size2 && size3 &&
+            <div className=' w-full flex justify-start items-center pr-2 md:mb-0 mb-2 gap-2'>
+              <p className=' text-lg py-1'>
+                Size:
+              </p>
+              <p className=' text-sm'>
+                {size1}
+              </p>
+              <p className=' text-sm'>
+                {size2}
+              </p>
+              <p className=' text-sm'>
+                {size3}
+              </p>
+            </div>
+          }
 
           {/* share button */}
           <Dialog>
@@ -186,16 +242,16 @@ const ProductDetails = (allProduct) => {
             </DialogContent>
           </Dialog>
 
-           {/*Add to Cart and Qty button */}
-           <div className=' w-full flex justify-between items-center h-16 py-2 my-6'>
+          {/*Add to Cart and Qty button */}
+          <div className=' w-full flex justify-between items-center h-16 py-2 my-6'>
             {/* Qty for product */}
-            <div className=' flex justify-between items-center-center min-w-[25%]  py-4 px-2 bg-slate-200 border-[0.1rem] border-slate- rounded-[3rem]'>
+            <div className=' flex justify-between items-center-center min-w-[25%]  md:py-4 py-3 md:px-2 px-1 bg-slate-200 border-[0.1rem]  md:rounded-[3rem] rounded-[0.8rem]'>
               <HiMinusSm className=' text-2xl cursor-pointer' />
               {2}
-              <BsPlus className=' text-2xl cursor-pointer'/>
+              <BsPlus className=' text-2xl cursor-pointer' />
             </div>
             {/* Add to Cart */}
-            <Button 
+            <Button
               // disabled 
               className=' px-16 py-7 w-[70%] rounded-[3rem]'>
               {/* <Loader2 className="mr-2 h-4 w-4 animate-spin" /> */}
@@ -204,11 +260,11 @@ const ProductDetails = (allProduct) => {
               </p>
             </Button>
           </div>
-            
+
           {/* buy button */}
           <div className=' w-full flex justify-between items-center h-16 py-6 mb-4 '>
             {/* Qty for product */}
-            <Button 
+            <Button
               // disabled 
               className=' px-16 py-7 w-[100%] rounded-[3rem]'>
               {/* <Loader2 className="mr-2 h-4 w-4 animate-spin" /> */}
@@ -223,32 +279,23 @@ const ProductDetails = (allProduct) => {
             <AccordionItem value="item-1">
               <AccordionTrigger>Description</AccordionTrigger>
               <AccordionContent>
-                Introducing the Double Skinny Strand - double the style, double the beauty! Elevate your look with this
-                elegant and delicate necklace featuring two stunning strands. Perfect for any occasion, this
-                piece will add a touch of sophistication to any outfit. Amp up your style game with the Double Skinny
-                Strand.
+               {specification}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>Shipping & Return</AccordionTrigger>
+              <AccordionTrigger>Care Instructions</AccordionTrigger>
               <AccordionContent>
-                For all orders exceeding a value of INR. 1599 shipping is offered for free.
-
-                Exchanges will be accepted for up to 10 days of Customer’s receipt on unworn items. You, as a Customer, are obliged to inform us via email before you return the item.
-
-                Otherwise, standard shipping charges apply. Check out our delivery Terms & Conditions for more details.
+              Keep The Product In A Cool Dry Place. Store The Product In A
+               Plastic packet,when Not In Use To Avoid Tarnishing Of Any Kind. 
+              Avoid Bringing It In Contact With Sweat Perfume And Moisturizer.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger>Exchange Policy</AccordionTrigger>
+              <AccordionTrigger>Guidance</AccordionTrigger>
               <AccordionContent>
-                `Returns will be accepted for up to 10 days of Customer’s receipt or tracking number on unworn items. You, as a Customer, are obliged to inform us via email before you return the item, only in the case of:
-                – Received the wrong item.
-                – Item arrived not as expected (ie. damaged packaging).
-                – Item had defects.
-                – Over delivery time.
-                – The shipper does not allow the goods to be inspected before payment.
-                The returned `product(s) must be in the original packaging, safety wrapped, undamaged and unworn. This means that the item(s) must be safely packed in a carton box for protection during transport, possibly the same carton used to ship to you as a customer.
+                It is suitable for sensitive skin and allergy-prone skin. Will 
+                not irritate skin or cling to clothing.It is Anti Tarnish stainless steel,
+                Water proof, Sweat Proof, Crafted for daily use.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -257,92 +304,92 @@ const ProductDetails = (allProduct) => {
 
       {/* people also bought this section */}
       <div className=' w-full flex flex-col justify-center items-center mt-10'>
-      <h1 className='text-4xl font-normal leading-10 py-1'>
-         Most Buy Products
-      </h1>
-      <p className= 'text-slate-600 font-medium py-1'>
-        Here’s some of our most similar products people are buying. Click to discover trending style.
-      </p>
-      {/* new arrival product section */}
-      <section className=' flex lg:flex-row flex-wrap justify-center items-center gap-6 w-full py-5  min-h-[30rem] '>
-         <Link to='/productdetails'>
+        <h1 className='text-4xl font-normal leading-10 py-1'>
+          Most Buy Products
+        </h1>
+        <p className='text-slate-600 font-medium py-1 md:px-0 px-5'>
+          Here’s some of our most similar products people are buying. Click to discover trending style.
+        </p>
+        {/* new arrival product section */}
+        <section className=' flex lg:flex-row flex-wrap justify-center items-center gap-6 w-full py-5  min-h-[30rem] '>
+          <Link to='/productdetails'>
             <div className='flex flex-col justify-start items-center hover:scale-[1.1] transition-all w-[18rem] min-h-[20rem] cursor-pointer rounded-b-xl shadow-md bg-pink-100/40 overflow-hidden'>
-               <img
-                  src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
-                  alt=""
-                  srcSet=""
-                  className='w-full h-full object-cover'
-               />
-               {/* title */}
-               <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
-                  Korean Delicate Pearl Zircon Ring
-               </p>
+              <img
+                src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
+                alt=""
+                srcSet=""
+                className='w-full h-full object-cover'
+              />
+              {/* title */}
+              <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
+                Korean Delicate Pearl Zircon Ring
+              </p>
 
-               {/* price */}
-               <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
-                  Regular priceRs. 1,299.00
-               </p>
+              {/* price */}
+              <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
+                Regular priceRs. 1,299.00
+              </p>
             </div>
-         </Link>
+          </Link>
 
-         <Link to='/productdetails'>
+          <Link to='/productdetails'>
             <div className='flex flex-col justify-start items-center hover:scale-[1.1] transition-all w-[18rem] min-h-[20rem] cursor-pointer rounded-b-xl shadow-md bg-pink-100/40 overflow-hidden'>
-               <img
-                  src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
-                  alt=""
-                  srcSet=""
-                  className='w-full h-full object-cover'
-               />
-               {/* title */}
-               <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
-                  Korean Delicate Pearl Zircon Ring
-               </p>
+              <img
+                src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
+                alt=""
+                srcSet=""
+                className='w-full h-full object-cover'
+              />
+              {/* title */}
+              <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
+                Korean Delicate Pearl Zircon Ring
+              </p>
 
-               {/* price */}
-               <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
-                  Regular priceRs. 1,299.00
-               </p>
+              {/* price */}
+              <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
+                Regular priceRs. 1,299.00
+              </p>
             </div>
-         </Link> <Link to='/productdetails'>
+          </Link> <Link to='/productdetails'>
             <div className='flex flex-col justify-start items-center hover:scale-[1.1] transition-all w-[18rem] min-h-[20rem] cursor-pointer rounded-b-xl shadow-md bg-pink-100/40 overflow-hidden'>
-               <img
-                  src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
-                  alt=""
-                  srcSet=""
-                  className='w-full h-full object-cover'
-               />
-               {/* title */}
-               <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
-                  Korean Delicate Pearl Zircon Ring
-               </p>
+              <img
+                src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
+                alt=""
+                srcSet=""
+                className='w-full h-full object-cover'
+              />
+              {/* title */}
+              <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
+                Korean Delicate Pearl Zircon Ring
+              </p>
 
-               {/* price */}
-               <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
-                  Regular priceRs. 1,299.00
-               </p>
+              {/* price */}
+              <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
+                Regular priceRs. 1,299.00
+              </p>
             </div>
-         </Link> <Link to='/productdetails'>
+          </Link> <Link to='/productdetails'>
             <div className='flex flex-col justify-start items-center hover:scale-[1.1] transition-all w-[18rem] min-h-[20rem] cursor-pointer rounded-b-xl shadow-md bg-pink-100/40 overflow-hidden'>
-               <img
-                  src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
-                  alt=""
-                  srcSet=""
-                  className='w-full h-full object-cover'
-               />
-               {/* title */}
-               <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
-                  Korean Delicate Pearl Zircon Ring
-               </p>
+              <img
+                src="https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713510638/Crown-Nine/DSC_3383_woc58l.jpg"
+                alt=""
+                srcSet=""
+                className='w-full h-full object-cover'
+              />
+              {/* title */}
+              <p className='font-normal text-md pt-3 leading-6 rounded-b-md text-left'>
+                Korean Delicate Pearl Zircon Ring
+              </p>
 
-               {/* price */}
-               <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
-                  Regular priceRs. 1,299.00
-               </p>
+              {/* price */}
+              <p className='font-normal text-md pb-2  leading-6 rounded-b-md  text-left'>
+                Regular priceRs. 1,299.00
+              </p>
             </div>
-         </Link>
-      </section>
-    </div>
-     
+          </Link>
+        </section>
+      </div>
+
     </div>
   )
 }

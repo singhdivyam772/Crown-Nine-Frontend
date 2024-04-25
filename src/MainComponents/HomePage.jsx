@@ -3,6 +3,7 @@ import HomeVideo from './HomeVideo'
 import CategoryProduct from './CategoryProduct'
 import ProductNewArrival from './ProductNewArrival'
 import FeedBack from './FeedBack'
+import Footer from './Footer'
 
 
 
@@ -16,6 +17,7 @@ const HomePage = (props) => {
       <CategoryProduct/>
       <ProductNewArrival allProduct={allProduct} isLoading={isLoading}/>
       <FeedBack/>
+      <Footer/>
     </div>
   )
 }

@@ -21,7 +21,7 @@ const [allProduct, setAllProduct] = useState();
 const [isLoading, setISLoading] = useState(false);
 useEffect(()=>{
   setISLoading(true);
-  axios.get('http://localhost:3001/getProductData')
+  axios.get('https://crown-nine-backend.onrender.com/getProductData')
   .then((result)=>{
     setAllProduct(result.data)
 

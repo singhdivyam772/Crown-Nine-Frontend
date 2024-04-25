@@ -15,11 +15,8 @@ const ProductNewArrival = (props) => {
       }
    }, [ProductData]);
 
-   console.log(allProductData)
-
    // navigate to productdetails
    const navigateToProductDetails = (products) => {
-      console.log(products)
       navigate('/productdetails', { state: { products } });
    };
 
@@ -41,7 +38,7 @@ const ProductNewArrival = (props) => {
                      >
                         {/* Product Image */}
                         <img
-                           src={products.image}
+                           src={products.mainimage1}
                            alt="image is not loaded"
                            className='w-full h-full object-cover'
                         />

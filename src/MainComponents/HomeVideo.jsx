@@ -15,7 +15,7 @@ const HomeVideo = () => {
        }}
        className="md:h-[80%] h-[50rem] w-full md:object-cover object-cover" >
           <source 
-             src="https://res.cloudinary.com/drj0uehgx/video/upload/v1713266463/crown-nine-logo/crown-nine-Homepage_djc0pj.mp4" 
+             src="https://res.cloudinary.com/dc6gh4zlc/video/upload/v1714019301/Crown-Nine/crown-nine-Homepage_ftw4lw.mp4" 
              // type="video/mp4" 
              />       
        </video>
