@@ -14,7 +14,9 @@ const FeedBack = () => {
       {
          id: 1,
          name: "Priya Sharma",
-         feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit`,
+         feadback: `I'm officially obsessed with [Jewellery Brand]! Every piece I've purchased has been absolutely beautiful and unique. It's like wearing a piece of art! Plus, the packaging is so pretty, it feels like getting a special gift every time."
+
+         `,
          icon: `⭐⭐⭐⭐⭐`
       },
       {
@@ -25,7 +27,7 @@ const FeedBack = () => {
       },
       {
          id: 3,
-         name: "Vikram Singh",
+         name: "Saurbhi Chaugh",
          feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit
       `,
          icon: `⭐⭐⭐⭐`
@@ -39,13 +41,13 @@ const FeedBack = () => {
       },
       {
          id: 5,
-         name: "Manish Kumar",
+         name: "Shreya Tiwari",
          feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit`,
          icon: `⭐⭐⭐⭐⭐`
       },
       { 
          id: 6, 
-         name:"Deepika Mehta ", 
+         name:"Vidhya Laxmi", 
          feadback:  `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
          `,
          icon: `⭐⭐⭐⭐⭐`

@@ -16,8 +16,6 @@ const HomePage = (props) => {
       <HomeVideo/>
       <CategoryProduct/>
       <ProductNewArrival allProduct={allProduct} isLoading={isLoading}/>
-      <FeedBack/>
-      <Footer/>
     </div>
   )
 }

@@ -13,6 +13,12 @@ import Cart from "./Pages/Cart";
 import AddProduct from "./Pages/AddProduct";
 import axios from "axios";
 import ProductData from './AllProductData';
+import ReturnPolicy from "./Pages/ReturnPolicy";
+import ShippingPolicy from "./Pages/ShippingPolicy";
+import TermsCondition from "./Pages/TermsCondition";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import Footer from "./MainComponents/Footer";
+import FeedBack from "./MainComponents/FeedBack";
 
 function App() {
 
@@ -58,8 +64,13 @@ console.log(allProduct)
         <Route path='/productdetails' element={<ProductDetails allProduct={allProduct}/>}/> 
         <Route path='/cart' element={<Cart/>}/> 
         <Route path='/addProduct' element={<AddProduct/>}/> 
+        <Route path='/privatepolicy' element={<PrivacyPolicy/>}/>
+        <Route path='/returnpolicy' element={<ReturnPolicy/>}/>
+        <Route path='/shipingpolicy' element={<ShippingPolicy/>}/> 
+        <Route path='/termscondition' element={<TermsCondition/>}/> 
       </Routes>
-     
+     <FeedBack/>
+     <Footer/>
     </div>
   
   

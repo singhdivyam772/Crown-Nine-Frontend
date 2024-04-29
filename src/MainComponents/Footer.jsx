@@ -2,7 +2,7 @@ import React from 'react'
 import { SlSocialFacebook } from "react-icons/sl";
 import { LuInstagram } from "react-icons/lu";
 import { RiTwitterXFill } from "react-icons/ri";
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className=" w-screen min-h-[50vh]  flex md:flex-row flex-col justify-center  items-start bg-[#FFCBCB] capitalize">
@@ -13,10 +13,20 @@ const Footer = () => {
           <h1>quick links</h1>
         </div>
         <div className="headed leading-8">about us</div>
-        <div className="headed leading-8">shipping policy</div>
-        <div className="headed leading-8">exchange & return</div>
-        <div className="headed leading-8">private policy</div>
-        <div className="headed leading-8">terms of services</div>
+        {/* shipping */}
+        <Link to='/shipingpolicy'>
+          <div className="headed leading-8">shipping policy</div>
+        </Link>
+        <Link to='/returnpolicy'>
+          <div className="headed leading-8">exchange & return</div>
+        </Link>
+        <Link to='/privatepolicy'>
+          <div className="headed leading-8">private policy</div>
+        </Link>
+
+        <Link to='/termscondition'>
+          <div className="headed leading-8">terms of services</div>
+        </Link>
         <div className="headed leading-8">contact us</div>
       </section>
 
