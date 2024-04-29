@@ -12,7 +12,7 @@ import ProductDetails from "./Pages/ProductDetails";
 import Cart from "./Pages/Cart";
 import AddProduct from "./Pages/AddProduct";
 import axios from "axios";
-
+import ProductData from './AllProductData';
 
 function App() {
 
@@ -21,15 +21,8 @@ const [allProduct, setAllProduct] = useState();
 const [isLoading, setISLoading] = useState(false);
 useEffect(()=>{
   setISLoading(true);
-  axios.get('https://crown-nine-backend.onrender.com/getProductData')
-  .then((result)=>{
-    setAllProduct(result.data)
-
-  })
-  .catch((error) =>{
-    console.log(error)
-  });
-  setISLoading(false)
+  setAllProduct(ProductData)
+  setISLoading(false);
 }, []);
 console.log(allProduct)
 

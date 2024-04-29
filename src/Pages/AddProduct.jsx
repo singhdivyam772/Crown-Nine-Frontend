@@ -94,7 +94,7 @@ const AddProduct = () => {
    }
 
    return (
-      <div className=' flex flex-col justify-start items-center w-screen min-h-screen px-5 '>
+      <div className=' hidden flex-col justify-start items-center w-screen min-h-screen px-5  '>
          <header className=' text-4xl font-medium leading-10 py-6 '>
             Add Your Product
          </header>

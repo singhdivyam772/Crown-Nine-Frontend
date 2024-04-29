@@ -42,38 +42,39 @@ import { RiFacebookLine } from "react-icons/ri";
 import { FaXTwitter } from "react-icons/fa6";
 import { HiMinusSm } from "react-icons/hi";
 import { BsPlus } from "react-icons/bs";
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 
 
 const ProductDetails = () => {
-
+  const navigate = useNavigate();
   const location = useLocation();
   const productDetails = location.state.products;
   console.log(productDetails);
-  const productTitle = productDetails.productTitle;
-  const productSubtitle = productDetails.productSubtitle;
-  const goldimage1 = productDetails.goldimage1;
-  const goldimage2 = productDetails.goldimage2;
-  const silverimage1 = productDetails.silverimage1;
-  const silverimage2 = productDetails.silverimage2;
-  const mainimage1 = productDetails.mainimage1;
-  const roseimage2 = productDetails.roseimage2;
-  const roseimage1 = productDetails.roseimage1;
-  const mrp = productDetails.mrp;
-  const price = productDetails.price;
-  const itemWeight = productDetails.itemWeight;
-  const shape = productDetails.shape;
-  const specification = productDetails.specification;
-  const gemType = productDetails.gemType;
-  const quality = productDetails.quality;
-  const size1 = productDetails.size1;
-  const size2 = productDetails.size2;
-  const size3 = productDetails.size3;
-  const color1 = productDetails.color1;
-  const color2 = productDetails.color2;
-  const color3 = productDetails.color3;
-
+  const {
+          productTitle,
+          productSubtitle,
+          goldimage1,
+          goldimage2,
+          silverimage1,
+          silverimage2,
+          mainimage1,
+          roseimage1,
+          roseimage2,
+          mrp,
+          price,
+          itemWeight,
+          shape,
+          specification,
+          gemType,
+          quality,
+          size1,
+          size2,
+          size3,
+          color1,
+          color2,
+          color3
+        } = productDetails;
   const imageData = [
     {
       id: 1,
@@ -105,6 +106,10 @@ const ProductDetails = () => {
     if (productDetails)
       console.log(productDetails)
   }, [productDetails])
+
+  const addProductToCart = (productDetails) =>{
+    navigate('/')
+  }
   return (
     <div className='w-screen min-h-screen flex flex-col md:px-10 px-5'>
 
@@ -118,7 +123,7 @@ const ProductDetails = () => {
             /
           </BreadcrumbSeparator>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/components">ProductDetails</BreadcrumbLink>
+            <BreadcrumbLink>ProductDetails</BreadcrumbLink>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
@@ -140,10 +145,10 @@ const ProductDetails = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious  className='left-[3.3rem] top-[16.5rem] w-[4rem] h-[4rem]' />
+            <CarouselPrevious className='left-[3.3rem] top-[16.5rem] w-[4rem] h-[4rem]' />
             <CarouselNext
-              disabled={(goldimage1 && goldimage2 && silverimage1 && silverimage2 && roseimage2 && roseimage1) ? false : true}
-               className='right-[3.3rem] top-[16.5rem]  w-[4rem] h-[4rem]' />
+              disabled={(goldimage1 && goldimage2) ? false : (silverimage1 && silverimage2) ? false : (roseimage2 && roseimage1) ? false : true}
+              className='right-[3.3rem] top-[16.5rem]  w-[4rem] h-[4rem]' />
           </Carousel>
         </section>
 
@@ -174,10 +179,10 @@ const ProductDetails = () => {
               <p className=' px-4 py-1 rounded-md bg-slate-100 uppercase font-semibold '>
                 {color1}
               </p>
-              <p  className=' px-4 py-1 rounded-md bg-slate-100 uppercase font-semibold '>
+              <p className=' px-4 py-1 rounded-md bg-slate-100 uppercase font-semibold '>
                 {color2}
               </p>
-              <p  className=' px-4 py-1 rounded-md  bg-slate-100 uppercase font-semibold '>
+              <p className=' px-4 py-1 rounded-md  bg-slate-100 uppercase font-semibold '>
                 {color3}
               </p>
             </div>
@@ -253,7 +258,9 @@ const ProductDetails = () => {
             {/* Add to Cart */}
             <Button
               // disabled 
-              className=' px-16 py-7 w-[70%] rounded-[3rem]'>
+              className=' px-16 py-7 w-[70%] rounded-[3rem]'
+              onClick={() => addProductToCart(productDetails)}
+            >
               {/* <Loader2 className="mr-2 h-4 w-4 animate-spin" /> */}
               <p>
                 Add To Cart
@@ -279,21 +286,21 @@ const ProductDetails = () => {
             <AccordionItem value="item-1">
               <AccordionTrigger>Description</AccordionTrigger>
               <AccordionContent>
-               {specification}
+                {specification}
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>Care Instructions</AccordionTrigger>
               <AccordionContent>
-              Keep The Product In A Cool Dry Place. Store The Product In A
-               Plastic packet,when Not In Use To Avoid Tarnishing Of Any Kind. 
-              Avoid Bringing It In Contact With Sweat Perfume And Moisturizer.
+                Keep The Product In A Cool Dry Place. Store The Product In A
+                Plastic packet,when Not In Use To Avoid Tarnishing Of Any Kind.
+                Avoid Bringing It In Contact With Sweat Perfume And Moisturizer.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>Guidance</AccordionTrigger>
               <AccordionContent>
-                It is suitable for sensitive skin and allergy-prone skin. Will 
+                It is suitable for sensitive skin and allergy-prone skin. Will
                 not irritate skin or cling to clothing.It is Anti Tarnish stainless steel,
                 Water proof, Sweat Proof, Crafted for daily use.
               </AccordionContent>

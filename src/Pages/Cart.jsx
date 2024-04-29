@@ -53,13 +53,7 @@ const Cart = () => {
                      /
                   </BreadcrumbSeparator>
                   <BreadcrumbItem>
-                     <BreadcrumbLink href="/components">Components</BreadcrumbLink>
-                  </BreadcrumbItem>
-                  <BreadcrumbSeparator>
-                     /
-                  </BreadcrumbSeparator>
-                  <BreadcrumbItem>
-                     <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+                     <BreadcrumbPage>Cart</BreadcrumbPage>
                   </BreadcrumbItem>
                </BreadcrumbList>
             </Breadcrumb>
