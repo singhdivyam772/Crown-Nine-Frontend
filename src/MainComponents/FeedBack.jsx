@@ -14,29 +14,27 @@ const FeedBack = () => {
       {
          id: 1,
          name: "Priya Sharma",
-         feadback: `I'm officially obsessed with [Jewellery Brand]! Every piece I've purchased has been absolutely beautiful and unique. It's like wearing a piece of art! Plus, the packaging is so pretty, it feels like getting a special gift every time."
-
-         `,
+         feadback: `Wow! I just received my necklace from Crownnine, and I'm blown away by how stunning it is!`
+,
          icon: `⭐⭐⭐⭐⭐`
       },
       {
          id: 2,
          name: "Pooja Kapoor",
-         feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit `,
+         feadback: `The craftsmanship is top-notch, and it looks even better in person than in the pictures. I can't wait to show it off everywhere I go `,
          icon: `⭐⭐⭐⭐`
       },
       {
          id: 3,
          name: "Saurbhi Chaugh",
-         feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit
-      `,
+         feadback: `I'm officially obsessed with Crownnine! Every piece I've purchased has been absolutely beautiful and unique.
+`,
          icon: `⭐⭐⭐⭐`
       },
       {
          id: 4,
          name: "Manisha Mehta ",
-         feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit
-      `,
+         feadback: `It's like wearing a piece of art! Plus, the packaging is so pretty, it feels like getting a special gift every time. `,
          icon: `⭐⭐⭐⭐⭐`
       },
       {
