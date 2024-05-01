@@ -3,8 +3,10 @@ import { IoPersonOutline, IoSearchOutline  } from "react-icons/io5";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosHeartEmpty } from "react-icons/io";
 import {Link} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const NavBar = () => {
+  const cartProducts = useSelector((state) => state.cart.products)
   return (
     <div className=" w-screen h-[5rem]  shadow-md bg-[#FFCBCB] flex px-10 justify-between items-center ">
       
@@ -28,7 +30,7 @@ const NavBar = () => {
       </ul>
       
       {/*  admin cart wishlist icon right */}
-      <section className=' flex justify-center items-center gap-5 text-2xl font-bold'>
+      <section className='relative flex justify-center items-center gap-5 text-2xl font-bold'>
          <IoSearchOutline className=' cursor-pointer' />
          <Link to='/addProduct'>
           <IoPersonOutline className=' cursor-pointer' />
@@ -36,6 +38,7 @@ const NavBar = () => {
          {/* <IoIosHeartEmpty className=' cursor-pointer' /> */}
          <Link to='/cart'>
           <AiOutlineShoppingCart / >
+          <div className=' absolute top-[-1rem] right-[0rem] text-sm text-white font-normal z-50 w-5 h-5 bg-green-400 flex justify-center items-center rounded-full'>{cartProducts.length}</div>
          </Link>
       </section>
     </div>

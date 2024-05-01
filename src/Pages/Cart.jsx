@@ -7,35 +7,14 @@ import {
    BreadcrumbPage,
    BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-
 import { FaTrash } from "react-icons/fa";
 import { Button } from '@/components/ui/button';
-
-const productData = [
-   {
-      id: 1,
-      title: `Skinny Strand`,
-      image: `https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713522459/Crown-Nine/DSC_3436_wgzthb.jpg`,
-      price: `Rs. 999.00`,
-      qty:`1`,
-   },
-   {
-      id: 2,
-      title: `Gold Waterdrops`,
-      image: `https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713522519/Crown-Nine/DSC_3468_whdnwj.jpg`,
-      price: `Rs. 1,299.00`,
-      qty:`1`,
-   },
-   {
-      id: 3,
-      title: `Satin Huggies`,
-      image: `https://res.cloudinary.com/dc6gh4zlc/image/upload/v1713522505/Crown-Nine/DSC_3466_gf6sf3.jpg`,
-      price: `Rs. 1,499.00`,
-      qty:`1`,
-   },
-]
-
+import { useSelector, useDispatch } from 'react-redux';
+import { removeProductFromCart } from '@/redux/Slices/cartSlice';
 const Cart = () => {
+   const cartProducts = useSelector((state) => state.cart.products)
+   const dispatch = useDispatch();
+   console.log(cartProducts);
    return (
       <div className=' flex flex-col justify-start items-start w-screen min-h-[50rem] px-6 mb-5'>
          {/* cart header */}
@@ -62,12 +41,12 @@ const Cart = () => {
          {/* product table with subtotal */}
          <section className=' w-full flex lg:flex-row flex-col justify-start items-start gap-2'>
             {/* Table */}
-            <div className='md:w-[75%] w-full overflow-x-auto '>
+           { <div className='md:w-[75%] w-full overflow-x-auto '>
                <table className='w-full'>
                   <thead className='sticky top-0 text-center md:text-sm text-xs'>
                      <tr className=''>
                         <th className='w-[22%] py-2 leading-10 border-[0.1rem] border-slate-300 text-slate-600 md:text-xl font-normal'>Product</th>
-                        <th className='w-[25%] py-2 leading-10 border-[0.1rem] border-slate-300 text-slate-600 md:text-xl font-normal'>Product Name</th>
+                        <th className='w-[25%] py-2 leading-10 border-[0.1rem] border-slate-300 text-slate-600 md:text-xl font-normal'>Product Details</th>
                         <th className='w-[6%] py-2 leading-10 border-[0.1rem] border-slate-300 text-slate-600 md:text-xl font-normal'>Qty</th>
                         <th className='w-[20%] py-2 leading-10 border-[0.1rem] border-slate-300 text-slate-600 md:text-xl font-normal'>Unit Price</th>
                         <th className='w-[20%] py-2 leading-10 border-[0.1rem] border-slate-300 text-slate-600 md:text-xl font-normal'>Total Price</th>
@@ -75,26 +54,26 @@ const Cart = () => {
                      </tr>
                   </thead>
                   <tbody className='md:text-sm text-xs'>
-                     {productData.map((data, index) => (
+                     {cartProducts.map((data, index) => (
                         <tr key={index} className='text-center'>
                            <td className='border-[0.1rem] border-slate-300'>
-                              <img src={data.image} className='md:w-[19rem] w-[10rem] md:h-[9rem] object-cover' alt={data.title} />
+                              <img src={data.mainimage1} className='md:w-[19rem] w-[10rem] md:h-[9rem] object-cover' alt={data.title} />
                            </td>
-                           <td className=' text-slate-600 md:text-xl font-normal border-[0.1rem] border-slate-300'>{data.title}</td>
+                           <td className=' text-slate-600 md:text-xl font-normal border-[0.1rem] border-slate-300'>{data.productTitle}</td>
                            <td className=' text-slate-600 md:text-xl font-normal border-[0.1rem] border-slate-300'>{data.qty}</td>
                            <td className=' text-slate-600 md:text-xl font-normal border-[0.1rem] border-slate-300'>{data.price}</td>
-                           <td className=' text-slate-600 md:text-xl font-normal border-[0.1rem] border-slate-300'>{data.price * data.qty}</td>
+                           <td className=' text-slate-600 md:text-xl font-normal border-[0.1rem] border-slate-300'>{data.mrp}</td>
                            <td className=' text-slate-600 md:text-xl font-normal border-[0.1rem] border-slate-300 text-center'>
                               <FaTrash
                                  className='cursor-pointer md:text-xl mx-auto '
-                              // onClick={() => removeProductHandler(data._id, data.title)}
+                              onClick={() => dispatch(removeProductFromCart({id: data.id}))}
                               />
                            </td>
                         </tr>
                      ))}
                   </tbody>
                </table>
-            </div>
+            </div>}
 
             {/* Subtotal */}
             <section className=' flex flex-col md:w-[25%] w-full px-5 py-5 bg-slate-100 md:h-[14rem] h-[10rem] rounded-lg' >
@@ -106,7 +85,7 @@ const Cart = () => {
             <Button className=' rounded-[2rem] mt-[1rem]'>Checkout</Button>
             </section>
          </section>
-
+         
       </div >
    )
 }

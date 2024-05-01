@@ -43,14 +43,16 @@ import { FaXTwitter } from "react-icons/fa6";
 import { HiMinusSm } from "react-icons/hi";
 import { BsPlus } from "react-icons/bs";
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-
-
+import { useSelector, useDispatch } from 'react-redux'
+import { addProductToCart } from '@/redux/Slices/cartSlice';
 
 const ProductDetails = () => {
+  const dispatch = useDispatch()
+  const cartProducts = useSelector((state) => state.cart.products)
   const navigate = useNavigate();
   const location = useLocation();
   const productDetails = location.state.products;
-  console.log(productDetails);
+ 
   const {
           productTitle,
           productSubtitle,
@@ -101,15 +103,12 @@ const ProductDetails = () => {
       url: roseimage2
     },
   ]
-
-  useEffect(() => {
-    if (productDetails)
-      console.log(productDetails)
-  }, [productDetails])
-
-  const addProductToCart = (productDetails) =>{
-    navigate('/')
-  }
+  // const addProductToCart = (productDetails) =>{
+  //   navigate('/')
+  // }
+  console.log(cartProducts)
+  // check if product is already in cart
+  const isInCart = cartProducts.some(product => product.id === productDetails.id);
   return (
     <div className='w-screen min-h-screen flex flex-col md:px-10 px-5'>
 
@@ -256,16 +255,23 @@ const ProductDetails = () => {
               <BsPlus className=' text-2xl cursor-pointer' />
             </div>
             {/* Add to Cart */}
-            <Button
+            {isInCart ?
+              (<Button
+              disabled 
+              className=' px-16 py-7 w-[70%] rounded-[3rem]'
+              > Added In Cart!
+              </Button>) 
+              : (
+                <Button
               // disabled 
               className=' px-16 py-7 w-[70%] rounded-[3rem]'
-              onClick={() => addProductToCart(productDetails)}
-            >
-              {/* <Loader2 className="mr-2 h-4 w-4 animate-spin" /> */}
-              <p>
+              onClick={() => dispatch(addProductToCart(productDetails))}
+              >
                 Add To Cart
-              </p>
-            </Button>
+              </Button>
+
+              )
+            }
           </div>
 
           {/* buy button */}
