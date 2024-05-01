@@ -34,48 +34,48 @@ const FeedBack = () => {
       {
          id: 4,
          name: "Manisha Mehta ",
-         feadback: `It's like wearing a piece of art! Plus, the packaging is so pretty, it feels like getting a special gift every time. `,
+         feadback: `I've never been much of a jewelry person until I discovered Crown Nine. Now, I can't stop adding pieces to my collection!`,
          icon: `⭐⭐⭐⭐⭐`
       },
       {
          id: 5,
          name: "Shreya Tiwari",
-         feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit`,
+         feadback: `They have such a great variety of styles to choose from, whether you're into delicate everyday pieces or statement-making jewels.`,
          icon: `⭐⭐⭐⭐⭐`
       },
       { 
          id: 6, 
          name:"Vidhya Laxmi", 
-         feadback:  `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         feadback:  `Hands down, Crown Nine is my go-to for gifts. Whether it's for my mom, sister, or best friend, I know I can always find something they'll love. And the best part? The quality is always amazing, so I know it'll last for years to come.
          `,
          icon: `⭐⭐⭐⭐⭐`
        },
       {
          id: 7,
          name: `Riya Desai`,
-         feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit`,
+         feadback: `Just received my order from Crown Nine, and I'm in love! The attention to detail is impeccable, and I appreciate that they use high-quality materials.         `,
          icon: `⭐⭐⭐⭐`
       },
       {
          id: 8,
          name: `Smita Rao`,
-         feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit`,
+         feadback: ` It's clear that a lot of care goes into each piece they create. Definitely a customer for life!`,
          icon: `⭐⭐⭐⭐⭐`
       },
-      {
-         id: 9,
-         name: `Sheetal Singh`,
-         feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      `,
-         icon: `⭐⭐⭐⭐⭐`
-      },
+      // {
+      //    id: 9,
+      //    name: `Sheetal Singh`,
+      //    feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      // `,
+      //    icon: `⭐⭐⭐⭐⭐`
+      // },
 
-      {
-         id: 10,
-         name: `Vanshika Verma`,
-         feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit`,
-         icon: `⭐⭐⭐⭐`
-      },
+      // {
+      //    id: 10,
+      //    name: `Vanshika Verma`,
+      //    feadback: `Lorem ipsum dolor sit amet, consectetur adipiscing elit`,
+      //    icon: `⭐⭐⭐⭐`
+      // },
    ];
    // Repeat the feedback data until there are at least 3 items
    while (feedbackData.length < 3) {
