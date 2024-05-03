@@ -14,9 +14,9 @@ const NavBar = () => {
       <section className=' md:pb-0 pb-8'>
         <Link to='/'>       
           <img 
-          src="https://res.cloudinary.com/drj0uehgx/image/upload/v1713174881/crown-nine-logo/crown-nine-logo_opuweb.jpg"
+          src="https://res.cloudinary.com/drj0uehgx/image/upload/v1714731108/portfolioi/White_And_Black_Modern_Abstract_Beauty_Logo_cmuh4m.png"
           alt="" 
-          className=' md:w-[4rem] w-[2rem] md:h-[4rem] h-[2rem] rounded-full object-contain'
+          className=' md:w-[4rem] w-[2rem] md:h-[4rem] h-[2rem] rounded-full object-cover'
           />
         </Link>
       </section>
