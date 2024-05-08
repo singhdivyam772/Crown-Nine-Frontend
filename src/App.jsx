@@ -19,6 +19,9 @@ import TermsCondition from "./Pages/TermsCondition";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import Footer from "./MainComponents/Footer";
 import FeedBack from "./MainComponents/FeedBack";
+import ProductNewArrival from "./MainComponents/ProductNewArrival";
+import CategoryProduct from "./MainComponents/CategoryProduct";
+import CategoryCard from "./Pages/CategoryCard";
 
 function App() {
 
@@ -30,7 +33,7 @@ useEffect(()=>{
   setAllProduct(ProductData)
   setISLoading(false);
 }, []);
-console.log(allProduct)
+// console.log(allProduct)
 
   const [emailData, setEmailData] = useState({
     userName: '',
@@ -68,6 +71,7 @@ console.log(allProduct)
         <Route path='/returnpolicy' element={<ReturnPolicy/>}/>
         <Route path='/shipingpolicy' element={<ShippingPolicy/>}/> 
         <Route path='/termscondition' element={<TermsCondition/>}/> 
+        <Route path='/productCard' element={<CategoryCard/>}/> 
       </Routes>
      <FeedBack/>
      <Footer/>

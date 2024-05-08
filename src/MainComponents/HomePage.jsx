@@ -14,7 +14,7 @@ const HomePage = (props) => {
   return (
     <div>
       <HomeVideo/>
-      <CategoryProduct/>
+      <CategoryProduct allProduct={allProduct} isLoading={isLoading}/>
       <ProductNewArrival allProduct={allProduct} isLoading={isLoading}/>
     </div>
   )
