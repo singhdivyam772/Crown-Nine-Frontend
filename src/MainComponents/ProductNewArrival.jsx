@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Loader from './Loader'
 
+import '../MainComponents/headermargin.css'
 
 const ProductNewArrival = (props) => {
    const ProductData = props.allProduct;
@@ -21,7 +22,7 @@ const ProductNewArrival = (props) => {
    };
 
    return (
-      <div className=' w-screen flex flex-col justify-center items-center'>
+      <div className=' maintainHeader w-screen flex flex-col justify-center items-center'>
          <h1 className='text-4xl font-normal leading-9 py-2'>
             New Arrivals
          </h1>

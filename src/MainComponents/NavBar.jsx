@@ -14,7 +14,7 @@ const NavBar = () => {
   }
 
   return (
-    <div className=" relative w-screen h-[5rem]  shadow-md bg-[#FFCBCB] flex md:px-10  justify-between items-center ">
+    <div className=" fixed z-20 w-screen h-[5rem]  shadow-md bg-[#FFCBCB] flex md:px-10  justify-between items-center ">
       
       {/* logo */}
       <section className=' md:pb-0 pb-1 md:pl-1 pl-4'>

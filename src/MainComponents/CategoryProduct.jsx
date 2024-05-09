@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './category.css';
 import { Link, useNavigate } from 'react-router-dom';
 
+import '../MainComponents/headermargin.css'
 const CategoryProduct = (props) => {
    const products = props.allProduct;
    // console.log(products);
@@ -38,7 +39,7 @@ const CategoryProduct = (props) => {
    ]
 
    return (
-      <div className='flex flex-col justify-center items-center mb-5 w-screen min-h-[35rem]'>
+      <div className=' maintainHeader flex flex-col justify-center items-center mb-5 w-screen min-h-[35rem]'>
          <h1 className='text-3xl font-medium leading-9 pt-8'>
             Everything for You
          </h1>

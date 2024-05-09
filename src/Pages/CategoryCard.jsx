@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import '../MainComponents/headermargin.css'
 
 const CategoryCard = () => {
    const location = useLocation();
@@ -16,7 +17,7 @@ const CategoryCard = () => {
    };
 
    return (
-      <div className=' w-screen flex flex-col justify-center items-center'>
+      <div className=' maintainHeader w-screen flex flex-col justify-center items-center'>
          <h1 className='text-4xl font-normal leading-9 pt-6 uppercase'>
             {category.categoryName}
          </h1>

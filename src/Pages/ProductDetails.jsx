@@ -46,6 +46,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { addProductToCart } from '@/redux/Slices/cartSlice';
 import CategoryProduct from '@/MainComponents/CategoryProduct';
+import '../MainComponents/headermargin.css'
 
 const ProductDetails = (props) => {
   const products = props.allProduct;
@@ -112,7 +113,7 @@ const ProductDetails = (props) => {
   // check if product is already in cart
   const isInCart = cartProducts.some(product => product.id === productDetails.id);
   return (
-    <div className='w-screen min-h-screen flex flex-col md:px-10 px-5'>
+    <div className=' maintainHeader w-screen min-h-screen flex flex-col md:px-10 px-5'>
 
       {/* breadcrumbs */}
       <Breadcrumb className=' my-5'>

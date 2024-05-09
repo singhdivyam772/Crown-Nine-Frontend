@@ -1,8 +1,9 @@
 import React from 'react'
+import '../MainComponents/headermargin.css'
 
 const TermsCondition = () => {
    return (
-      <div className=' w-screen min-h-[40vh] flex flex-col justify-start gap-6 items-center md:px-[6rem] px-10 py-2 mt-[2rem]'>
+      <div className=' maintainHeader w-screen min-h-[40vh] flex flex-col justify-start gap-6 items-center md:px-[6rem] px-10 py-2 mt-[2rem]'>
          <div className='flex flex-col justify-start items-center'>
             <h1 className='text-pink-500/50 uppercase md:text-3xl text-xl font-extrabold'>
                Crown-Nine Terms of Service
