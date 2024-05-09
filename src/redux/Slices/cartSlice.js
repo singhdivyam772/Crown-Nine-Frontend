@@ -21,8 +21,7 @@ export const cartSlice = createSlice({
       if (!state.products.some(product => product.id === id)) {
         state.products.push(action.payload);
         localStorage.setItem('cart', JSON.stringify(state.products));
-        console.log('Product Added to cart:', action.payload);
-        console.log('Cart Items:', state.products);
+      
         toast('Added in Cart!',
           {
             icon: '👏',

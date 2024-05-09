@@ -72,6 +72,8 @@ useEffect(()=>{
         <Route path='/shipingpolicy' element={<ShippingPolicy/>}/> 
         <Route path='/termscondition' element={<TermsCondition/>}/> 
         <Route path='/productCard' element={<CategoryCard/>}/> 
+        <Route path='/products' element={<ProductNewArrival allProduct={allProduct} isLoading={isLoading}/>}/>
+        
       </Routes>
      <FeedBack/>
      <Footer/>
